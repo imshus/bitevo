@@ -172,7 +172,6 @@ em { font-family: "Playfair Display", Georgia, serif; font-style: italic; color:
 @keyframes loaderOut { to { opacity: 0; visibility: hidden; } }
 
 /* Hero entrance (runs after the loader) */
-.home { --intro: 1.6s; }
 .anim { animation: fadeUp .8s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--intro, 0s) + var(--d, 0) * .12s); }
 .line { display: block; overflow: hidden; padding-bottom: .08em; }
 .line__in { display: inline-block; animation: lineUp .9s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--intro, 0s) + var(--d, 0) * .12s); }
