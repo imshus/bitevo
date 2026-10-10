@@ -51,8 +51,29 @@ if (track) {
   });
 }
 
+// Menu page: filter dishes by category (also opens menu.html#snacks etc.)
+const tabs = document.querySelectorAll('.tab[data-filter]');
+if (tabs.length) {
+  const dishes = document.querySelectorAll('#menuGrid .dish');
+  const applyFilter = filter => {
+    tabs.forEach(t => t.classList.toggle('is-active', t.dataset.filter === filter));
+    dishes.forEach(d => {
+      const show = filter === 'all' || d.dataset.cat === filter;
+      d.classList.toggle('is-hidden', !show);
+      d.classList.remove('is-shown');
+      if (show) { void d.offsetWidth; d.classList.add('is-shown'); }
+    });
+  };
+  tabs.forEach(t => t.addEventListener('click', () => {
+    applyFilter(t.dataset.filter);
+    history.replaceState(null, '', t.dataset.filter === 'all' ? location.pathname : `#${t.dataset.filter}`);
+  }));
+  const fromHash = location.hash.slice(1);
+  if ([...tabs].some(t => t.dataset.filter === fromHash)) applyFilter(fromHash);
+}
+
 // Fade-in on scroll
-const targets = document.querySelectorAll('.section__head, .dish, .why__text, .feature, .step, .cta__card, .contact-card, .faq details, .form');
+const targets = document.querySelectorAll('.section__head, .dish, .why__text, .feature, .step, .cta__card, .contact-card, .faq details, .form, .story__collage, .story__text, .mv__card, .mosaic__item');
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
