@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export const PHONE = '+91 93193 46656';
 export const PHONE_HREF = 'tel:+919319346656';
-export const EMAIL = 'info@bitevo.com';
+export const EMAIL = 'info@bitevo.in';
 
 export default function Footer() {
   return (

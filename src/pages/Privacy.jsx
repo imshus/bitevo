@@ -105,7 +105,7 @@ export default function Privacy() {
           <div className="legal__contact">
             <p><strong>Grievance Officer, BiteVo</strong></p>
             <p>Phone: <a href="tel:+919319346656">+91 93193 46656</a></p>
-            <p>Email: <a href="mailto:info@bitevo.com">info@bitevo.com</a></p>
+            <p>Email: <a href="mailto:info@bitevo.in">info@bitevo.in</a></p>
           </div>
           <p>You can also visit our <Link to="/support">Help &amp; Support</Link> page.</p>
         </article>
